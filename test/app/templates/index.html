@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BASE FILE</title>
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+	<link rel="stylesheet" href='{% static "/css/acc.css" %}'>
+    <link rel="stylesheet" href='{% static "/css/vendor/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "/css/style.css" %}'>
+	<style type="text/css">
+    .brand{
+      background: #D63447 !important;
+    }
+    .brand-text{
+      color: white !important;
+    }
+    form{
+      max-width: 460px;
+      margin: 30px auto;
+      padding: 30px;
+    }
+  </style>
+</head>
+
+<body>
+		<div class="container">
+			<a href="{% url 'index' %}" class="heading-h2 divider">EDIFY</a>
+		</div>
+		<center>
+	<div class="container">
+		<div class="row">
+			<center>
+			<div>
+					<form action="{% url 'upload' %}" method="POST" enctype="multipart/form-data"> 
+						{% csrf_token %}
+						<div class="center">
+							<label for="name" >File: </label>
+							<input type="file" name="csv_file" id="csv_file" required="True" class="form-control">
+						</div>
+						<div class="center">
+							<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
+						</div>
+					</form>
+				</div>
+			</center>
+			</div>
+		</div>
+	</center>
+</body>
+</html>

@@ -1,0 +1,37 @@
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  /*height: 300px;  Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column1 {
+  float: center;
+  width: 33.33%;
+  /*height: 300px;  Should be removed. Only for demonstration */
+}
+
+.left2, .middle2 {
+  width: 33.33%;
+}
+
+.right2 {
+  width: 25%;
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+    .column1 {
+    width: 100%;
+  }
+}
