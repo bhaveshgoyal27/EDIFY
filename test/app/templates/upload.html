@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPLOAD</title>
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href='{% static "/css/acc.css" %}'>
+    <link rel="stylesheet" href='{% static "/css/vendor/bootstrap.min.css" %}'>
+    <link rel="stylesheet" href='{% static "/css/style.css" %}'>
+	<style type="text/css">
+    .brand{
+      background: #D63447 !important;
+    }
+    .brand-text{
+      color: white !important;
+    }
+    form{
+      max-width: 460px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+  </style>
+
+</head>
+
+<body>
+	<!-- <nav> -->
+		<div class="container">
+			<a href="{% url 'index' %}" class="heading-h2 divider">EDIFY</a>
+<!-- 			<ul id="nav-mobile" class="right hide-on-small-and-down">
+				<li><a href="{% url 'index' %}" class="btn btn-outline-pill btn-custom-light">GO TO HOMEPAGE</a></li>
+			</ul>
+ -->		</div>
+	<!-- </nav> -->
+<!-- 	<div class="container">
+		<div class="row">
+			<ul>
+				<li>COLUMN WISE DETIALS</li>
+				<li>ENTIRE FILE SUMMARY</li>
+			</ul>
+		</div>
+	</div>-->
+	<div class="container">
+          <div class="section-heading-wrap text-center mb-5">
+            <h2 class="heading-h2 text-center divider"><span class="gsap-reveal">ANALYSIS</span></h2>
+          </div>
+          <div class="row">
+            <div class="column">
+            <div class="testimonial-v1">
+              <div class="testimonial-inner-bg">
+                <span class="quote1">Mean</span><br>
+                {% for key,value in mean.items %}
+			<p>{{key}}:</p><p>{{value}}</p>
+			{% endfor %}
+              </div>
+            </div>
+            </div>
+            <div class="column">
+            <div class="testimonial-v1">
+              <div class="testimonial-inner-bg">
+				<span class="quote1">Median</span><br>
+                {% for key,value in median.items %}
+			<p>{{key}}:</p><p>{{value}}</p>
+			{% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="testimonial-v1">
+              <div class="testimonial-inner-bg">
+				<span class="quote1">Standard Deviation</span><br>
+                {% for key,value in std.items %}
+			<p>{{key}}:</p><p>{{value}}</p>
+			{% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="testimonial-v1">
+              <div class="testimonial-inner-bg">
+				<span class="quote1">Minimum</span><br>
+                {% for key,value in min.items %}
+			<p>{{key}}:</p><p>{{value}}</p>
+			{% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="testimonial-v1">
+              <div class="testimonial-inner-bg">
+				<span class="quote1">Maximum</span><br>
+                {% for key,value in max.items %}
+			<p>{{key}}:</p><p>{{value}}</p>
+			{% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <center>
+      <img src='{% static "/assets/1.png" %}' style="background-color: white;"></center>
+</body>
+</html>
